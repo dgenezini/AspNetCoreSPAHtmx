@@ -1,0 +1,10 @@
+﻿@if (!string.IsNullOrEmpty(ViewData["Title"]!.ToString()))
+{
+    <head>
+        <title>@ViewData["Title"] - Razor Pages Sample + HTMX</title>
+    </head>
+}
+
+@RenderBody()
+
+@RenderSection("Scripts", required: false)

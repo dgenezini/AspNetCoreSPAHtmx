@@ -1,3 +1,14 @@
 ﻿@{
-    Layout = "_Layout";
+    @if (!ViewContext.HttpContext.Request.Headers["Hx-Request"].Contains("true"))
+    {
+        Layout = "_Layout";
+    }
+    else if (ViewContext.HttpContext.Request.Headers["Hx-Boosted"].Contains("true"))
+    {
+        Layout = "_LayoutHtmxBoost";
+    }
+    else
+    {
+        Layout = "";
+    }
 }

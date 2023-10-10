@@ -24,6 +24,8 @@ namespace RazorPagesSample.Pages.Customers
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
+            await Task.Delay(TimeSpan.FromMilliseconds(500));
+
             Customer = await _db.Customers.FindAsync(id);
 
             if (Customer == null)
@@ -37,6 +39,8 @@ namespace RazorPagesSample.Pages.Customers
 
         public async Task<IActionResult> OnPostAsync()
         {
+            await Task.Delay(TimeSpan.FromMilliseconds(500));
+
             if (!ModelState.IsValid)
             {
                 return Page();

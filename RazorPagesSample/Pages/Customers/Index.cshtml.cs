@@ -26,11 +26,15 @@ namespace RazorPagesSample.Pages.Customers
 
         public async Task OnGetAsync()
         {
+            await Task.Delay(TimeSpan.FromMilliseconds(500));
+
             Customers = await _db.Customers.AsNoTracking().ToListAsync();
         }
 
         public async Task<IActionResult> OnPostDeleteAsync(int id)
         {
+            await Task.Delay(TimeSpan.FromMilliseconds(500));
+
             var customer = await _db.Customers.FindAsync(id);
 
             if (customer != null)

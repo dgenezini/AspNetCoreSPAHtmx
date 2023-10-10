@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="~/@(nameof(RazorPagesSample)).styles.css" />
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top" hx-boost="true" hx-target="#main-content" hx-indicator="#spinner">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar-collapse"
@@ -35,12 +35,16 @@
                 <ul class="nav navbar-nav">
                     <li><a asp-page="/Index">Home</a></li>
                     <li><a asp-page="/Customers/Index">Customers</a></li>
+                    <li><partial name="_LoadSpinner" /></li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="container body-content">
-        @RenderBody()
+        <div id="main-content">
+            @RenderBody()
+        </div>
+
         <hr />
 
         <footer>
@@ -48,6 +52,7 @@
             <p>&copy; 2017 - Razor Pages</p>
         </footer>
     </div>
+
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
@@ -69,6 +74,8 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
+
+    <script src="https://unpkg.com/htmx.org@1.9.6"></script>
 
     @RenderSection("Scripts", required: false)
 </body>

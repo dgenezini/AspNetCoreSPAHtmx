@@ -23,11 +23,15 @@ namespace RazorPagesSample.Pages.Customers
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
+            await Task.Delay(TimeSpan.FromMilliseconds(500));
+
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
+            await Task.Delay(TimeSpan.FromMilliseconds(500));
+
             if (!ModelState.IsValid)
             {
                 return Page();
