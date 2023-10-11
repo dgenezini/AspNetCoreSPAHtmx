@@ -1,2 +1,4 @@
-## ASP.NET Core Razor Pages Sample
-Examples of various ways to build simple CRUD pages using ASP.NET Core Razor Pages (coming in ASP.NET Core 2.0).
+# Server-side rendered SPAs with ASP.NET and no Javascript
+
+**Blog post:**
+[Server-side rendered SPAs with ASP.NET and no Javascript](https://blog.genezini.com/p/server-side-rendered-spas-with-asp.net-and-no-javascript/#indicating-the-loading-status/)
